@@ -8,6 +8,8 @@ const app = express();
 app.get("/cleanup", async (req, res) => {
   const { url } = req.query;
 
+  const start = process.hrtime();
+
   // Fetch the HTML content of the provided URL
   const response = await fetch(url);
   const html = await response.text();
@@ -22,6 +24,12 @@ app.get("/cleanup", async (req, res) => {
 
   // Send the cleaned up content as the response
   res.send(article.content);
+
+  // Calculate the execution time
+  const end = process.hrtime(start);
+  const executionTime = `${end[0]}s ${end[1] / 1000000}ms`;
+
+  console.log(`Request for ${url} took ${executionTime}`);
 });
 
 // Start the server
