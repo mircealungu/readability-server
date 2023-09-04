@@ -1,4 +1,4 @@
-import {createEmptyDiv, removeAllElementsIfExistent} from "./util.js";
+import {createEmptyDiv, removeAllElementsIfExistent} from "../util.js";
 
 
 /*Final cleanup function */

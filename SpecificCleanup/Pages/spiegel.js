@@ -1,4 +1,4 @@
-import { removeAllElementsIfExistent } from "../util.js";
+import { removeAllElementsIfExistent } from "../../util.js";
 
 export const spiegelRegex = /(http|https):\/\/(www\.spiegel\.de).*/;
 

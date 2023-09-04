@@ -1,4 +1,4 @@
-import { createDivWithContent, removeFirstElementIfExistent } from "../util.js";
+import { createDivWithContent, removeFirstElementIfExistent } from "../../util.js";
 
 export const bbcRegex = /(http|https):\/\/(www.bbc.com).*/;
 

@@ -102,3 +102,9 @@ export function createEmptyDiv() {
   const div = document.createElement("div");
   return div;
 }
+
+export function text2DOM(text) {
+  const { window } = new JSDOM(text);
+  const document = window.document;
+  return document;
+}

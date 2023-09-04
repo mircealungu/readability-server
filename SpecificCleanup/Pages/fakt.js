@@ -1,4 +1,4 @@
-import { removeAllElementsIfExistent, removeFirstElementIfExistent } from "../util.js";
+import { removeAllElementsIfExistent, removeFirstElementIfExistent } from "../../util.js";
 
 export const faktRegex = /(http|https):\/\/(www.fakt.pl).*/;
 

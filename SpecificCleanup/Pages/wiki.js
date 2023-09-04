@@ -1,4 +1,4 @@
-import { createDivWithContent, removeAllElementsIfExistent } from "../util.js"
+import { createDivWithContent, removeAllElementsIfExistent } from "../../util.js"
 
 export const wikiRegex = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]wikipedia+)\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/
 

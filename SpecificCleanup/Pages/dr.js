@@ -1,6 +1,6 @@
 export const drRegex =
   /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]dr+)\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/;
-import { addCommas, removeAllElementsIfExistent } from "../util.js";
+import { addCommas, removeAllElementsIfExistent } from "../../util.js";
 
 export function cleanDRBefore(documentClone) {
   let cleanedDocumentClone = removePrefixandDate(documentClone);

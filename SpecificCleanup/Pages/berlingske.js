@@ -1,4 +1,4 @@
-import { createDivWithContent, removeFirstElementIfExistent } from "../util.js";
+import { createDivWithContent, removeFirstElementIfExistent } from "../../util.js";
 
 export const berlingskeRegex = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]berlingske+)\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/;
 

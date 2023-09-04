@@ -1,9 +1,29 @@
 import {JSDOM} from "jsdom";
 import {Readability} from "@mozilla/readability";
+import {Article} from "./Article.js";
+import {generalClean} from "./SpecificCleanup/generalClean.js";
+import {cleanAfterArray, individualClean} from "./SpecificCleanup/pageSpecificClean.js";
+import DOMPurify from "dompurify";
+import {HTML2Text} from "./convert_htm_to_plaintext.js";
 
 export async function basic_readability_cleanup(url) {
 
     return (await get_readability_article(url)).content
+}
+
+export async function advanced_readability_cleanup(url) {
+    let article = await Article(url)
+
+    let cleanedContent = generalClean(article.content);
+
+    cleanedContent = individualClean(cleanedContent, url, cleanAfterArray);
+
+
+    const window = new JSDOM('').window;
+    const purify = DOMPurify(window);
+    cleanedContent = purify.sanitize(cleanedContent);
+
+    return HTML2Text(cleanedContent)
 }
 
 

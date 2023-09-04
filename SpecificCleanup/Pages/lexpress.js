@@ -1,4 +1,4 @@
-import { createDivWithContent, removeAllElementsIfExistent, removeFirstElementIfExistent } from "../util.js";
+import { createDivWithContent, removeAllElementsIfExistent, removeFirstElementIfExistent } from "../../util.js";
 
 export const lexpressRegex = /(http|https):\/\/(.*)(.lexpress.fr).*/;
 

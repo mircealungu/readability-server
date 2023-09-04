@@ -1,4 +1,4 @@
-import { removeAllElementsIfExistent } from "../util.js";
+import { removeAllElementsIfExistent } from "../../util.js";
 
 export const expressRegex = /(http|https):\/\/(www.express.co.uk).*/;
 

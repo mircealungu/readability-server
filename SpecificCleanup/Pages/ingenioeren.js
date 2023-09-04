@@ -1,4 +1,4 @@
-import {createDivWithContent, getHTMLContent} from "../util.js";
+import {createDivWithContent, getHTMLContent} from "../../util.js";
 
 export const ingenioerRegex = /^(http|https):\/\/ing.dk\/.*/;
 

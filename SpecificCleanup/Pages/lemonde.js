@@ -1,4 +1,4 @@
-import { createDivWithContent, removeFirstElementIfExistent } from "../util.js";
+import { createDivWithContent, removeFirstElementIfExistent } from "../../util.js";
 
 export const lemondeRegex = /(http|https):\/\/(www.lemonde.fr).*/;
 

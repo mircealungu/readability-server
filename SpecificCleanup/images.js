@@ -1,4 +1,4 @@
-import {createDivWithContent, getEmptyDocument, getSourceAsDOM} from "./util.js";
+import {createDivWithContent, getEmptyDocument, getSourceAsDOM} from "../util.js";
 import {egyszervoltRegex} from "./Pages/egyszervolt.js";
 import {JSDOM} from "jsdom";
 

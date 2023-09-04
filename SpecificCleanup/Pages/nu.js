@@ -1,4 +1,4 @@
-import { removeAllElementsIfExistent } from "../util.js";
+import { removeAllElementsIfExistent } from "../../util.js";
 
 export const nuRegex = /^(http|https):\/\/(www.)nu.nl\/.*/;
 

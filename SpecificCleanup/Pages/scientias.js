@@ -1,4 +1,4 @@
-import { createDivWithContent } from "../util.js";
+import { createDivWithContent } from "../../util.js";
 
 export const scientiasRegex = /(http|https):\/\/(scientias.nl).*/;
 

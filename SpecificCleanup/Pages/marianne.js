@@ -3,7 +3,7 @@ import {
   createDivWithContent,
   removeAllElementsIfExistent,
   removeAllElementsWithText,
-} from "../util.js";
+} from "../../util.js";
 
 export const marianneRegex = /(http|https):\/\/(www\.marianne\.net).*/;
 

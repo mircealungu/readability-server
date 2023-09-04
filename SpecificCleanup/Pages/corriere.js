@@ -1,4 +1,4 @@
-import {removeAllElementsIfExistent, removeFirstElementIfExistent} from "../util.js";
+import {removeAllElementsIfExistent, removeFirstElementIfExistent} from "../../util.js";
 
 export const corriereRegex = /(http|https):\/\/(www.corriere.it).*/;
 

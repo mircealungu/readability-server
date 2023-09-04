@@ -19,7 +19,7 @@ import {cleanPolitiken, cleanPolitikenBefore, politikenRegex} from "./Pages/poli
 import {cleanScientias, scientiasRegex} from "./Pages/scientias.js";
 import {cleanEgyszervolt, egyszervoltRegex} from "./Pages/egyszervolt.js";
 import {corriereRegex, removeCorriereScripts} from "./Pages/corriere.js";
-import {deleteIntervals, deleteTimeouts} from "./util.js";
+import {deleteIntervals, deleteTimeouts} from "../util.js";
 
 
 

@@ -1,4 +1,4 @@
-import { createDivWithContent, removeAllElementsIfExistent } from "../util.js";
+import { createDivWithContent, removeAllElementsIfExistent } from "../../util.js";
 
 export const wyborczaRegex = /(http|https):\/\/(wyborcza.pl).*/;
 

@@ -1,4 +1,4 @@
-import {createDivWithContent, getHTMLContent, removeAllElementsIfExistent, removeAllElementsWithText} from "../util.js";
+import {createDivWithContent, getHTMLContent, removeAllElementsIfExistent, removeAllElementsWithText} from "../../util.js";
 
 export const ekstrabladetRegex = /^(http|https):\/\/ekstrabladet.dk\/.*/;
 
