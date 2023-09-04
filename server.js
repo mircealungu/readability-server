@@ -1,8 +1,8 @@
 import express from "express";
-import { JSDOM } from "jsdom";
-import { Readability } from "@mozilla/readability";
+import {basic_readability_cleanup} from "./cleanup.js";
 
 const app = express();
+
 
 // Define a single endpoint
 app.get("/cleanup", async (req, res) => {
@@ -10,20 +10,10 @@ app.get("/cleanup", async (req, res) => {
 
   const start = process.hrtime();
 
-  // Fetch the HTML content of the provided URL
-  const response = await fetch(url);
-  const html = await response.text();
-
-  // Create a DOM from the HTML
-  const { window } = new JSDOM(html);
-  const doc = window.document;
-
-  // Use Readability to extract the article content
-  const reader = new Readability(doc);
-  const article = reader.parse();
+  const content = basic_readability_cleanup(url);
 
   // Send the cleaned up content as the response
-  res.send(article.content);
+  res.send(content);
 
   // Calculate the execution time
   const end = process.hrtime(start);
