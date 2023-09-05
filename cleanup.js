@@ -23,7 +23,7 @@ export async function advanced_readability_cleanup(url) {
     const purify = DOMPurify(window);
     cleanedContent = purify.sanitize(cleanedContent);
 
-    return HTML2Text(cleanedContent)
+    return cleanedContent
 }
 
 
