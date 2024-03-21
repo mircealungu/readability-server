@@ -47,6 +47,36 @@ app.get("/readable_html", async (req, res) => {
   console.log(`Request for ${url} took ${executionTime}`);
 });
 
+app.get("/readable_html_verbose", async (req, res) => {
+  const { url } = req.query;
+  console.log(req.query);
+
+  if (!url) {
+    return res.status(400).send("Missing 'url' parameter");
+  }
+
+  console.log(`Request received for URL: ${url}`);
+
+  const start = process.hrtime();
+
+  try {
+    const content = await advanced_readability_cleanup(url);
+
+    // Send the cleaned up content as the response
+    res.send(content);
+
+    // Calculate the execution time
+    const end = process.hrtime(start);
+    const executionTime = `${end[0]}s ${end[1] / 1000000}ms`;
+
+    console.log(`Request for ${url} took ${executionTime}`);
+  } catch (error) {
+    console.error(`Error processing request for ${url}:`, error);
+    res.status(500).send("Error processing request");
+  }
+});
+
+
 app.get("/old_cleanup", async (req, res) => {
   const { url } = req.query;
 
