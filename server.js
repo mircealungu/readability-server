@@ -5,6 +5,10 @@ import {HTML2Text} from "./convert_htm_to_plaintext.js";
 const app = express();
 
 
+app.get("/ping", async(req, res)=> {
+  res.send("pong");
+});
+
 // Define a single endpoint
 app.get("/plain_text", async (req, res) => {
   const { url } = req.query;
@@ -65,5 +69,6 @@ app.get("/old_cleanup", async (req, res) => {
 // Start the server
 const port = 3000;
 app.listen(port, () => {
+  console.log("hello!")
   console.log(`Server is running on http://localhost:${port}`);
 });
