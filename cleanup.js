@@ -4,7 +4,6 @@ import {Article} from "./Article.js";
 import {generalClean} from "./SpecificCleanup/generalClean.js";
 import {cleanAfterArray, individualClean} from "./SpecificCleanup/pageSpecificClean.js";
 import DOMPurify from "dompurify";
-import {HTML2Text} from "./convert_htm_to_plaintext.js";
 
 export async function basic_readability_cleanup(url) {
 
@@ -40,6 +39,9 @@ export async function get_readability_article(url) {
     // Use Readability to extract the article content
     const reader = new Readability(doc);
     const article = reader.parse();
+    if (article === null) {
+        throw new Error("Readability failed to parse article")
+    }
 
     return article;
 }

@@ -35,10 +35,15 @@ app.get("/cleanup", async (req, res) => {
 
   const start = process.hrtime();
 
-  const html = await advanced_readability_cleanup(url);
+  try {
+    const html = await advanced_readability_cleanup(url);
+    // Send the cleaned up content as the response
+    res.send({html: html, text: HTML2Text(html)});
+  } catch (e) {
+    res.status(500).send(e.message);
+  }
 
-  // Send the cleaned up content as the response
-  res.send({html: html, text: HTML2Text(html)});
+
 
   // Calculate the execution time
   const end = process.hrtime(start);
