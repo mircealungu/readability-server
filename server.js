@@ -70,7 +70,8 @@ app.get("/old_cleanup", async (req, res) => {
 
 
 // Start the server
-const port = 3001;
+const port = 3456;
 app.listen(port, () => {
+  console.log("Readability server: v.1.1.1")
   console.log(`Server is running on http://localhost:${port}`);
 });
