@@ -1,4 +1,5 @@
-import {JSDOM} from "jsdom";
+import { JSDOM } from "jsdom";
+import axios from "axios";
 
 export function removeFirstElementIfExistent(element, div) {
   let elem = div.querySelector(element);
@@ -13,12 +14,13 @@ export function removeAllElementsIfExistent(element, div) {
     for (let i = 0; i < elements.length; i++) {
       elements[i].remove();
     }
-}}
+  }
+}
 
 export function removeAllElementsWithText(element, text, div) {
   let elems = div.querySelectorAll(element);
   Array.from(elems).filter((elem) =>
-    elem.textContent.includes(text) ? elem.remove() : elem
+    elem.textContent.includes(text) ? elem.remove() : elem,
   );
 }
 
@@ -26,7 +28,7 @@ export function addCommas(element, div) {
   const elements = div.querySelectorAll(element);
   if (elements) {
     for (let i = 0; i < elements.length; i++) {
-      if (i != elements.length - 1) {
+      if (i !== elements.length - 1) {
         elements[i].innerHTML += ", ";
       }
     }
@@ -42,19 +44,17 @@ export function changeTagToParagraph(element, div) {
   }
 }
 
-export function createDivWithContent(content){
+export function createDivWithContent(content) {
   const { window } = new JSDOM("");
   const document = window.document;
 
   const div = document.createElement("div");
-  div.innerHTML = content
-  return div
+  div.innerHTML = content;
+  return div;
 }
 
-
-
 export function deleteTimeouts() {
-  var id = window.setTimeout(function () {}, 0);
+  let id = window.setTimeout(function () {}, 0);
   while (id--) {
     window.clearTimeout(id);
   }
@@ -66,8 +66,6 @@ export function deleteIntervals() {
     window.clearInterval(id);
   }
 }
-
-
 
 export async function getSourceAsDOM(url) {
   const response = await fetch(url);
@@ -82,29 +80,29 @@ export async function getSourceAsDOM(url) {
 }
 
 export async function getHTMLContent(url) {
-  axios.get('url').then(function (response) {
-    console.log(response);
-    return response;
-  }).catch(function (error) {
-    console.log(error);
-  });
+  axios
+    .get(url)
+    .then(function (response) {
+      console.log(response);
+      return response;
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
 }
 
 export function getEmptyDocument() {
-  const {window} = new JSDOM("");
-  const document = window.document;
-  return document;
+  const { window } = new JSDOM("");
+  return window.document;
 }
 
 export function createEmptyDiv() {
   const { window } = new JSDOM("");
   const document = window.document;
-  const div = document.createElement("div");
-  return div;
+  return document.createElement("div");
 }
 
 export function text2DOM(text) {
   const { window } = new JSDOM(text);
-  const document = window.document;
-  return document;
+  return window.document;
 }
